@@ -10,7 +10,7 @@ import quizRoute from "../routes/quiz.route.js";
 import questionRoute from "../routes/question.route.js";
 
 configDotenv();
-await connectDB(); // IMPORTANT for serverless
+await connectDB(); 
 
 const app = express();
 
