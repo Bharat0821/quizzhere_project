@@ -20,7 +20,6 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
       "https://quizzhere2110.vercel.app"
     ],
     credentials: true,
