@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://your-frontend.vercel.app"
+      "https://quizzhere2110.vercel.app"
     ],
     credentials: true,
   })
