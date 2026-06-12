@@ -1,11 +1,11 @@
 import { Router } from 'express';
-const router = Router();
-import { find } from '../models/Question';
+import Question from '../models/question.model.js';
 
-// Get questions by topic
+const router = Router();
+
 router.get('/:topic', async (req, res) => {
     try {
-        const questions = await find({ topic: req.params.topic });
+        const questions = await Question.find({ topic: req.params.topic });
         res.json(questions);
     } catch (error) {
         res.status(500).json({ message: error.message });
