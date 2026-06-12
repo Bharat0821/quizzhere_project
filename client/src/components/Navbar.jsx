@@ -59,6 +59,8 @@ const Navbar = () => {
           <Link to="/css-docs" className="text-gray-700 dark:text-gray-200 hover:text-blue-500 transition font-bold ">
             CSS
           </Link>
+          <Link to="/js-docs" className="text-gray-700 dark:text-gray-200 hover:text-blue-500 transition font-bold ">
+          </Link>
           {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
