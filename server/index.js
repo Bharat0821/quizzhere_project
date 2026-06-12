@@ -19,7 +19,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      process.env.FRONTEND_URL || "https://quizzhere-client.onrender.com"
+      process.env.FRONTEND_URL || "https://quizzhere.onrender.com"
     ],
     credentials: true,
   })
@@ -31,5 +31,5 @@ app.use("/api/v1/question", questionRoute);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
