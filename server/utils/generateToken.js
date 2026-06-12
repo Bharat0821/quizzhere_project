@@ -7,15 +7,11 @@ const generateToken = (res, user, message) => {
   });
 
   return res.status(200).cookie("token", token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
-    maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day
-  }).json({
-    success: true,
-    message,
-    user
-  });
+  httpOnly: true,
+  secure: true,        
+  sameSite: "none",    
+  maxAge: 1 * 24 * 60 * 60 * 1000,
+}).json({ success: true, message, user });
 };
 
 export default generateToken;
