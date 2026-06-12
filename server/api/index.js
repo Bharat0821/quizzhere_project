@@ -1,35 +1,35 @@
 import express from "express";
 import { configDotenv } from "dotenv";
-import connectDB from "../database/db.js";
+import connectDB from "./database/db.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-// Routes
-import userRoute from "../routes/user.route.js";
-import quizRoute from "../routes/quiz.route.js";
-import questionRoute from "../routes/question.route.js";
+import userRoute from "./routes/user.route.js";
+import quizRoute from "./routes/quiz.route.js";
+import questionRoute from "./routes/question.route.js";
 
 configDotenv();
-await connectDB(); 
+await connectDB();
 
 const app = express();
 
-// Middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://quizzhere2110.vercel.app"
+      "http://localhost:5173",
+      "https://your-frontend.onrender.com"  // update after frontend deploys
     ],
     credentials: true,
   })
 );
 
-// API Routes
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/quiz", quizRoute);
 app.use("/api/v1/question", questionRoute);
 
-// Export Express App for Vercel
-export default app;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
