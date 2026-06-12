@@ -7,5 +7,6 @@ const questionSchema = new Schema({
     answer: { type: String, required: true }
 });
 
-export default Question = mongoose.model('Question', questionSchema);
-export const User = mongoose.model("User", userSchema);
+const Question = model('Question', questionSchema);
+
+export default Question;
