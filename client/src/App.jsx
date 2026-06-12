@@ -21,6 +21,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import LicensePage from './pages/LicensePage'
 import HtmlCnt from './pages/readingDocs/HtmlCnt'
 import CssCnt from './pages/readingDocs/CssCnt'
+import JsCnt from './pages/readingDocs/JsCnt'
 
 const appRouter = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ const appRouter = createBrowserRouter([
            {
             path: "css-docs",
             element: <CssCnt />,
+           },
+           {
+            path: "js-docs",
+            element: <JsCnt />,
            },
     
       //admin routes starts from here
